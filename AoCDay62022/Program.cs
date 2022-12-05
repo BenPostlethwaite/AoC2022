@@ -1,4 +1,4 @@
-﻿namespace AoCDay52022;
+﻿namespace AoCDay62022;
 class Program
 {
     static void Main(string[] args)

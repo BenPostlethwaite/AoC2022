@@ -1,0 +1,72 @@
+def GetLines():
+
+    with open("test.txt","r") as F:
+        data = F.readlines()
+    for i in range(len(data)):
+        data[i] = data[i].strip('\n')
+    return data
+
+def getChoice(line):
+    choice = "error"
+    if line[1] == "X":
+        if line[0] == "A":
+            choice = "Y"
+        if line[0] == "B":
+            choice = "Z"
+        if line[0] == "C":
+            choice = "X"
+
+    elif line[1] == "Y":
+        if line[0] == "A":
+            choice = "X"
+        if line[0] == "B":
+            choice = "Y"
+        if line[0] == "C":
+            choice = "Z"
+
+    elif line[0] == "Z":
+        if line[0] == "A":
+            choice = "Y"
+        if line[0] == "B":
+            choice = "Z"
+        if line[0] == "C":
+            choice = "X"
+
+    return choice
+
+def CalcScore(data):
+    score = 0
+    for line in data:
+        round = 0
+        line = line.split(" ")
+        compChoice = getChoice(line)
+        print(line)
+
+        print(f"compchoice: {compChoice}")
+
+        if  line[1] == "Z":
+            round += 6
+        elif line[1] == "Y":
+            round += 3
+        elif line[1] == "X":
+            round += 0
+        
+        if compChoice == "X":
+            round += 1
+        elif compChoice == "Y":
+            round += 2
+        elif compChoice == "Z":
+            round += 3
+    
+        print(round)
+        score += round
+
+    return score
+
+
+
+data = GetLines()
+score = CalcScore(data)
+    
+#(data)
+print(score)

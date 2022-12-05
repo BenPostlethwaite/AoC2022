@@ -1,0 +1,16 @@
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/AdventOfCode2022Day2.csproj.AssemblyReference.cache
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/AdventOfCode2022Day2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/AdventOfCode2022Day2.AssemblyInfoInputs.cache
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/AdventOfCode2022Day2.AssemblyInfo.cs
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/AdventOfCode2022Day2.csproj.CoreCompileInputs.cache
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/bin/Debug/net5.0/AdventOfCode2022Day2.deps.json
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/bin/Debug/net5.0/AdventOfCode2022Day2.runtimeconfig.json
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/bin/Debug/net5.0/AdventOfCode2022Day2.runtimeconfig.dev.json
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/bin/Debug/net5.0/AdventOfCode2022Day2.dll
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/bin/Debug/net5.0/AdventOfCode2022Day2.pdb
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/AdventOfCode2022Day2.dll
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/ref/AdventOfCode2022Day2.dll
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/AdventOfCode2022Day2.pdb
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/AdventOfCode2022Day2.genruntimeconfig.cache
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/bin/Debug/net5.0/AdventOfCode2022Day2
+/Users/Ben/Desktop/AdventOfCode2022Day2/AdventOfCode2022Day2/obj/Debug/net5.0/refint/AdventOfCode2022Day2.dll

@@ -1,0 +1,15 @@
+/Users/Ben/Desktop/2022AoCDay3/bin/Debug/net6.0/2022AoCDay3
+/Users/Ben/Desktop/2022AoCDay3/bin/Debug/net6.0/2022AoCDay3.deps.json
+/Users/Ben/Desktop/2022AoCDay3/bin/Debug/net6.0/2022AoCDay3.runtimeconfig.json
+/Users/Ben/Desktop/2022AoCDay3/bin/Debug/net6.0/2022AoCDay3.dll
+/Users/Ben/Desktop/2022AoCDay3/bin/Debug/net6.0/2022AoCDay3.pdb
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/2022AoCDay3.csproj.AssemblyReference.cache
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/2022AoCDay3.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/2022AoCDay3.AssemblyInfoInputs.cache
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/2022AoCDay3.AssemblyInfo.cs
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/2022AoCDay3.csproj.CoreCompileInputs.cache
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/2022AoCDay3.dll
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/refint/2022AoCDay3.dll
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/2022AoCDay3.pdb
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/2022AoCDay3.genruntimeconfig.cache
+/Users/Ben/Desktop/2022AoCDay3/obj/Debug/net6.0/ref/2022AoCDay3.dll

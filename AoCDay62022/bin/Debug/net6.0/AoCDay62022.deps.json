@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "AoCDay62022/1.0.0": {
+        "runtime": {
+          "AoCDay62022.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AoCDay62022/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

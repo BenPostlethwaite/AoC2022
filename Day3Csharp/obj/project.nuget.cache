@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5CNCJgw+nmGXiqHYR3ROArC5cqiMP4V9ClPadv+kaBcZU6IC5UBp1KcZQKCw4o2bD3NK89/j4fJ8VlRgupIdFA==",
+  "dgSpecHash": "1bEqMjue/T3moB/KUMZED/+UZqKTXNG4+uTwn1LiJ8PRDtoq18QiJu9HtKYBu9ymxh6OjyuqQTDig8xxGcpGqQ==",
   "success": true,
-  "projectFilePath": "/Users/Ben/Desktop/2022AoCDay3/2022AoCDay3.csproj",
+  "projectFilePath": "/Users/Ben/Desktop/AoC2022/Day3Csharp/2022AoCDay3.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

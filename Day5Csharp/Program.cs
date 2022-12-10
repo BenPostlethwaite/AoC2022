@@ -1,5 +1,8 @@
-﻿using System.Data;
+﻿using System.Data.Common;
+using System.Diagnostics;
+using System.Data;
 using System.ComponentModel.DataAnnotations.Schema;
+
 namespace AoC2022day5;
 class Program
 {
@@ -13,7 +16,9 @@ class Program
             List<string> line = new List<string>();
             for (int i = 1; i < data[0].Length; i+=4)
             {
+                
                 line.Add(data[index][i].ToString());
+                
             }
             dataTable.Add(line);
             index ++;
@@ -24,7 +29,10 @@ class Program
             Stack<string> stack = new Stack<string>();
             for (int y = dataTable.Count-1; y >= 0; y--)
             {
-                 stack.Push(dataTable[y][x]);
+                if (dataTable[y][x] != " ")
+                {
+                    stack.Push(dataTable[y][x]);
+                }
             }
             stackTable.Add(stack);
         }
@@ -57,7 +65,7 @@ class Program
     
     static void Main(string[] args)
     {
-        string[] data = File.ReadAllLines("test.txt");
+        string[] data = File.ReadAllLines("data.txt");
         List<Stack<string>> stackTable = GetStackTable(data);
         List<List<int>> instructionList = GetInstructionList(data);
 
@@ -72,6 +80,11 @@ class Program
             {
                 stackTable[instruction[2]-1].Push(tempStack.Pop());
             }
+        }
+        string answer = "";
+        foreach (Stack<string> stack in stackTable)
+        {
+            answer += stack.Pop();
         }
     }
 }

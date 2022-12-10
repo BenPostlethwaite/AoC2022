@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Ben/Desktop/AoC2022/AoCDay62022/AoCDay62022.csproj",
+      "projectUniqueName": "/Users/Ben/Desktop/AoC2022/Day6Csharp/AoCDay62022.csproj",
       "projectName": "AoCDay62022",
-      "projectPath": "/Users/Ben/Desktop/AoC2022/AoCDay62022/AoCDay62022.csproj",
+      "projectPath": "/Users/Ben/Desktop/AoC2022/Day6Csharp/AoCDay62022.csproj",
       "packagesPath": "/Users/Ben/.nuget/packages/",
-      "outputPath": "/Users/Ben/Desktop/AoC2022/AoCDay62022/obj/",
+      "outputPath": "/Users/Ben/Desktop/AoC2022/Day6Csharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/Ben/.nuget/NuGet/NuGet.Config"

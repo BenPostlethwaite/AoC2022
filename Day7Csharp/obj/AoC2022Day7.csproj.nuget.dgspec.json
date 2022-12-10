@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Ben/Desktop/AoC2022/AoC2022Day7/AoC2022Day7.csproj": {}
+    "/Users/Ben/Desktop/AoC2022/Day7Csharp/AoC2022Day7.csproj": {}
   },
   "projects": {
-    "/Users/Ben/Desktop/AoC2022/AoC2022Day7/AoC2022Day7.csproj": {
+    "/Users/Ben/Desktop/AoC2022/Day7Csharp/AoC2022Day7.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Ben/Desktop/AoC2022/AoC2022Day7/AoC2022Day7.csproj",
+        "projectUniqueName": "/Users/Ben/Desktop/AoC2022/Day7Csharp/AoC2022Day7.csproj",
         "projectName": "AoC2022Day7",
-        "projectPath": "/Users/Ben/Desktop/AoC2022/AoC2022Day7/AoC2022Day7.csproj",
+        "projectPath": "/Users/Ben/Desktop/AoC2022/Day7Csharp/AoC2022Day7.csproj",
         "packagesPath": "/Users/Ben/.nuget/packages/",
-        "outputPath": "/Users/Ben/Desktop/AoC2022/AoC2022Day7/obj/",
+        "outputPath": "/Users/Ben/Desktop/AoC2022/Day7Csharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Ben/.nuget/NuGet/NuGet.Config"

@@ -13,14 +13,14 @@ class Program
 {
     static List<List<int>> getData()
     {
-        string[] textFile = File.ReadAllLines("test.txt");
+        string[] textFile = File.ReadAllLines("data.txt");
         List<string> list1d = new List<string>();
         List<List<int>> data = new List<List<int>>();
 
         list1d = textFile.ToList();
         foreach (string line in list1d)
         {
-            List<int> intLine = new List<int>();            
+            List<int> intLine = new List<int>();
             foreach (char ch in line)
             {
                 int num = (int)ch;
@@ -29,7 +29,7 @@ class Program
             }
             data.Add(intLine);
         }
-        
+
         return data;
     }
 
@@ -54,7 +54,7 @@ class Program
         {
             foreach (Node node in row)
             {
-                Console.Write(node.stepsTo.ToString()+ " ");
+                Console.Write(node.stepsTo.ToString() + " ");
             }
             Console.WriteLine();
         }
@@ -63,9 +63,9 @@ class Program
     static bool TestIfAllAssigned(List<List<Node>> minValues)
     {
         bool allAssigned = true;
-        foreach(List<Node> row in minValues)
+        foreach (List<Node> row in minValues)
         {
-            foreach(Node node in row)
+            foreach (Node node in row)
             {
                 if (node.isMinimum == false)
                 {
@@ -75,26 +75,107 @@ class Program
         }
         return allAssigned;
     }
-
-    static void AssignMinValue(List<List<Node>> minValues)
+        
+    static void BranchOut(List<List<Node>> minValues,List<List<int>> heights, int y, int x)
     {
-        int min = 10000000;
-        int minX = 0;
-        int minY = 0;
-
-        for (int y = 0; y < minValues.Count; y++)
+        if (x > 0)
         {
-            for (int x = 0; x < minValues[y].Count; x++)
+            if (heights[y][x - 1] + 1 >= heights[y][x])
             {
-                if (minValues[y][x].assigned && (minValues[y][x].isMinimum == false) && minValues[y][x].stepsTo < min)
+                if (minValues[y][x - 1].assigned == false)
                 {
-                    min = minValues[y][x].stepsTo;
-                    minX = x;
-                    minY = y;
+                    minValues[y][x - 1].stepsTo = minValues[y][x].stepsTo + 1;
+                    minValues[y][x - 1].assigned = true;
+                }
+                else
+                {
+                    if (minValues[y][x].stepsTo < minValues[y][x - 1].stepsTo)
+                    {
+                        minValues[y][x - 1].stepsTo = minValues[y][x].stepsTo + 1;
+                    }
                 }
             }
         }
-        minValues[minY][minX].isMinimum = true;
+        if (y > 0)
+        {
+            if (heights[y - 1][x] + 1 >= heights[y][x])
+            {
+                if (minValues[y - 1][x].assigned == false)
+                {
+                    minValues[y - 1][x].stepsTo = minValues[y][x].stepsTo + 1;
+                    minValues[y - 1][x].assigned = true;
+                }
+                else
+                {
+                    if (minValues[y][x].stepsTo < minValues[y - 1][x].stepsTo)
+                    {
+                        minValues[y - 1][x].stepsTo = minValues[y][x].stepsTo + 1;
+                    }
+                }
+            }
+        }
+        if (x < (heights[0].Count - 1))
+        {
+            if (heights[y][x + 1] + 1 >= heights[y][x])
+            {
+                if (minValues[y][x + 1].assigned == false)
+                {
+                    minValues[y][x + 1].stepsTo = minValues[y][x].stepsTo + 1;
+                    minValues[y][x + 1].assigned = true;
+                }
+                else
+                {
+                    if (minValues[y][x].stepsTo < minValues[y][x + 1].stepsTo)
+                    {
+                        minValues[y][x + 1].stepsTo = minValues[y][x].stepsTo + 1;
+                    }
+                }
+            }
+        }
+        if (y < (heights.Count - 1))
+        {
+            if (heights[y + 1][x] + 1 >= heights[y][x])
+            {
+                if (minValues[y + 1][x].assigned == false)
+                {
+                    minValues[y + 1][x].stepsTo = minValues[y][x].stepsTo + 1;
+                    minValues[y + 1][x].assigned = true;
+                }
+                else
+                {
+                    if (minValues[y][x].stepsTo < minValues[y + 1][x].stepsTo)
+                    {
+                        minValues[y + 1][x].stepsTo = minValues[y][x].stepsTo + 1;
+                    }
+                }
+            }
+        }
+    }
+
+    static int[] FindStartAndFinish(List<List<int>> heights, List<List<Node>> minValues)
+    {
+        int[] startCoords = {0,0};
+        for (int y = 0; y < heights.Count(); y++)
+        {
+            for (int x = 0; x < heights[0].Count(); x++)
+            {
+                if (heights[y][x] == 'S')
+                {
+                    heights[y][x] = 'a';
+                       
+                }
+                if (heights[y][x] == 'E')
+                {
+                    startCoords[0] = y;
+                    startCoords[1] = x;
+                    heights[y][x] = 'z';
+                    minValues[y][x].stepsTo = 0;
+                    minValues[y][x].isMinimum = true;
+                    minValues[y][x].assigned = true; 
+                }
+            }            
+        }
+        return startCoords;
     }
 
     static void Main(string[] args)
@@ -104,112 +185,39 @@ class Program
         List<List<Node>> minValues = new List<List<Node>>();
         GetMinValues(heights, minValues);
 
-        minValues[0][0].stepsTo = 0;
-        minValues[0][0].isMinimum = true;
-        minValues[0][0].assigned = true;
-        
-        heights[0][0] = (int)'a';
-        heights[2][5]= (int)'z';
+        int[] startCoords = FindStartAndFinish(heights,minValues);
 
-        while (TestIfAllAssigned(minValues) == false)
+        while (true)
         {
-            //PrintMinValues(minValues);
-            //Console.WriteLine("");
+            int min = 10000000;
+            int minX = startCoords[1];
+            int minY = startCoords[0];
+
             for (int y = 0; y < minValues.Count; y++)
             {
-
-                for (int x = 0; x < minValues[0].Count; x++)
+                for (int x = 0; x < minValues[y].Count; x++)
                 {
-                    if (minValues[y][x].isMinimum)
+                    if (minValues[y][x].assigned && (minValues[y][x].isMinimum == false) && minValues[y][x].stepsTo < min)
                     {
-                        if (x > 0)
-                        {
-                            if (heights[y][x-1]-1<=heights[y][x])
-                            {
-                                if (minValues[y][x-1].assigned == false)
-                                {
-                                    minValues[y][x - 1].stepsTo = minValues[y][x].stepsTo + 1;
-                                    minValues[y][x - 1].assigned = true;                                                                                           
-                                }
-                                else
-                                {
-                                    if (minValues[y][x].stepsTo < minValues[y][x - 1].stepsTo)
-                                    {
-                                        minValues[y][x - 1].stepsTo = minValues[y][x].stepsTo + 1;
-                                    }                                     
-                                }                                
-                            }
-                        }
-                        if (y > 0)
-                        {
-                            if (heights[y-1][x]-1<=heights[y][x])
-                            {
-                                if (minValues[y-1][x].assigned == false)
-                                {
-                                    minValues[y-1][x].stepsTo = minValues[y][x].stepsTo + 1;
-                                    minValues[y-1][x].assigned = true;                                                                                           
-                                }
-                                else
-                                {
-                                    if (minValues[y][x].stepsTo < minValues[y-1][x].stepsTo)
-                                    {
-                                        minValues[y-1][x].stepsTo = minValues[y][x].stepsTo + 1;
-                                    }                                     
-                                }                                
-                            }
-                        }
-                        if (x < (heights.Count - 1))
-                        {
-                            if (heights[y][x+1]-1<=heights[y][x])
-                            {
-                                if (minValues[y][x+1].assigned == false)
-                                {
-                                    minValues[y][x+1].stepsTo = minValues[y][x].stepsTo + 1;
-                                    minValues[y][x+1].assigned = true;                                                                                           
-                                }
-                                else
-                                {
-                                    if (minValues[y][x].stepsTo < minValues[y][x+1].stepsTo)
-                                    {
-                                        minValues[y][x+1].stepsTo = minValues[y][x].stepsTo + 1;
-                                    }                                     
-                                }                                
-                            }
-                        }
-                        if (y < (heights.Count - 1))
-                        {
-                            if (heights[y+1][x]-1<=heights[y][x])
-                            {
-                                if (minValues[y+1][x].assigned == false)
-                                {
-                                    minValues[y+1][x].stepsTo = minValues[y][x].stepsTo + 1;
-                                    minValues[y+1][x].assigned = true;                                                                                           
-                                }
-                                else
-                                {
-                                    if (minValues[y][x].stepsTo < minValues[y+1][x].stepsTo)
-                                    {
-                                        minValues[y+1][x].stepsTo = minValues[y][x].stepsTo + 1;
-                                    }                                     
-                                }                                
-                            }
-                        }
+                        min = minValues[y][x].stepsTo;
+                        minX = x;
+                        minY = y;
                     }
                 }
             }
-            AssignMinValue(minValues);
-        }
-
-        PrintMinValues(minValues);
-        foreach (var line in heights)
-        {
-            foreach ( var num in line)
+            minValues[minY][minX].isMinimum = true;
+            if (heights[minY][minX] == 'a')
             {
-                Console.Write(num);
-                Console.Write(" ");
+                Console.WriteLine("");
+                Console.WriteLine(minValues[minY][minX].stepsTo);
+                Console.ReadKey();
             }
-            Console.WriteLine();
-        }
-        Console.ReadKey();
+            BranchOut(minValues, heights, minY, minX);
+
+
+            //PrintMinValues(minValues);
+            //Console.WriteLine("");
+        }            
     }
+
 }

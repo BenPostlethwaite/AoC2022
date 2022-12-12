@@ -11,8 +11,6 @@ public class Monkey
     public int throwToIfTrue;
     public int throwToIfFalse;
 
-    
-
     public void Operate(int itemIndex)
     {
         ulong output = 0;

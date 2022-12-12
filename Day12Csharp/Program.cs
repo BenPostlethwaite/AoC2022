@@ -161,8 +161,7 @@ class Program
             {
                 if (heights[y][x] == 'S')
                 {
-                    heights[y][x] = 'a';
-                       
+                    heights[y][x] = 'a';                     
                 }
                 if (heights[y][x] == 'E')
                 {
@@ -206,8 +205,9 @@ class Program
                 }
             }
             minValues[minY][minX].isMinimum = true;
-            if (heights[minY][minX] == 'a')
+            if (heights[minY][minX] == 'S')
             {
+                PrintMinValues(minValues);
                 Console.WriteLine("");
                 Console.WriteLine(minValues[minY][minX].stepsTo);
                 Console.ReadKey();

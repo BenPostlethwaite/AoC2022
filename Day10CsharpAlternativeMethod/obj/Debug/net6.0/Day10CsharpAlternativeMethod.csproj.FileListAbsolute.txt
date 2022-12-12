@@ -1,0 +1,15 @@
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/bin/Debug/net6.0/Day10CsharpAlternativeMethod
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/bin/Debug/net6.0/Day10CsharpAlternativeMethod.deps.json
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/bin/Debug/net6.0/Day10CsharpAlternativeMethod.runtimeconfig.json
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/bin/Debug/net6.0/Day10CsharpAlternativeMethod.dll
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/bin/Debug/net6.0/Day10CsharpAlternativeMethod.pdb
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/Day10CsharpAlternativeMethod.csproj.AssemblyReference.cache
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/Day10CsharpAlternativeMethod.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/Day10CsharpAlternativeMethod.AssemblyInfoInputs.cache
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/Day10CsharpAlternativeMethod.AssemblyInfo.cs
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/Day10CsharpAlternativeMethod.csproj.CoreCompileInputs.cache
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/Day10CsharpAlternativeMethod.dll
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/refint/Day10CsharpAlternativeMethod.dll
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/Day10CsharpAlternativeMethod.pdb
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/Day10CsharpAlternativeMethod.genruntimeconfig.cache
+/Users/Ben/Desktop/AoC2022/Day10CsharpAlternativeMethod/obj/Debug/net6.0/ref/Day10CsharpAlternativeMethod.dll

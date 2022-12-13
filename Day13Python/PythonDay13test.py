@@ -10,6 +10,8 @@ def GetData(fileName):
         data.append(pair)
     return (data)
 
+
+
 data = GetData("test.txt")
 for pair in data:
     line1string = pair[0]

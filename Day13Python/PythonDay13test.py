@@ -12,39 +12,59 @@ def GetData(fileName):
 
 def GetNums(line):
     data = []
-    numString = ""
-    for i in range(len(line)):
+    item = ""
+    i = 0
+    while i <(len(line)):
         c = line[i]
         if c == "[":
-            GetNums(line[i+1:-1])
+           
+            item = GetNums(line[i+1:-1])
+            
+            indents = 1
+            for index in range(i+1,len(line)):
+                testFor = line[index]
+                if testFor == ']':
+                    indents -= 1
+                if testFor == '[':
+                    indents += 1
+                if indents == 0:
+                    break
+            i = index
             
         elif c == ']':
+            if item != "":
+                if type(item) == str:
+                    item = int(item)
+                data.append(item)
             return(data)
         elif c == ',':
-            data.append(int(numString))
-            numString = ''
+            if type(item) == str:
+                item = int(item)
+
+            data.append(item)
+            item = ''
         else:
-            numString+=c
-            if i == len(data):
-                data.append(int(numString))
+            item+=c
+            if i == len(line)-1:
+                data.append(int(item))
+        i+=1
+    """
+    if item != "":
+        if type(item) == str:
+            item = int(item)
+        data.append(item)"""
     return(data)
-
-
-
-
-    
 
 
 data = GetData("test.txt")
 for pair in data:
-    line1string = pair[0]
-    line2string = pair[1]
-    line1 = GetNums(line1string) 
-    #print(f"{line1} {line2}")    
-            
-#https://www.tutorialspoint.com/convert-a-string-representation-of-list-into-list-in-python
-
-
+    line1string = pair[0][1:-1]
+    line2string = pair[1][1:-1]
+    line1 = GetNums(line1string)
+    line2 = GetNums(line2string)
+    print(line1)
+    print(line2)
+    print("");
 
 
 

@@ -18,7 +18,7 @@ def GetNums(line):
         c = line[i]
         if c == "[":
            
-            item = GetNums(line[i+1:-1])
+            item = GetNums(line[i+1:])
             
             indents = 1
             for index in range(i+1,len(line)):
@@ -30,19 +30,24 @@ def GetNums(line):
                 if indents == 0:
                     break
             i = index
+            if i >= len(line)-1:
+                data.append(item)
             
         elif c == ']':
             if item != "":
                 if type(item) == str:
                     item = int(item)
                 data.append(item)
+
             return(data)
+
         elif c == ',':
             if type(item) == str:
                 item = int(item)
 
             data.append(item)
             item = ''
+
         else:
             item+=c
             if i == len(line)-1:
@@ -55,7 +60,13 @@ def GetNums(line):
         data.append(item)"""
     return(data)
 
-
+def TestRightOrder(line1, line2):
+    for i in range(len(line1)):
+        if line1[i] < line2[i]:
+            return (True)
+        elif line1[i] > line2[i]:
+            return (False)
+    
 data = GetData("test.txt")
 for pair in data:
     line1string = pair[0][1:-1]
@@ -64,7 +75,9 @@ for pair in data:
     line2 = GetNums(line2string)
     print(line1)
     print(line2)
-    print("");
+    print(TestRightOrder(line1, line2))
+    print("")
+    
 
 
 

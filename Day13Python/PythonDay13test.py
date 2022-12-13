@@ -10,16 +10,37 @@ def GetData(fileName):
         data.append(pair)
     return (data)
 
+def GetNums(line):
+    data = []
+    numString = ""
+    for i in range(len(line)):
+        c = line[i]
+        if c == "[":
+            GetNums(line[i+1:-1])
+            
+        elif c == ']':
+            return(data)
+        elif c == ',':
+            data.append(int(numString))
+            numString = ''
+        else:
+            numString+=c
+            if i == len(data):
+                data.append(int(numString))
+    return(data)
+
+
+
+
+    
 
 
 data = GetData("test.txt")
 for pair in data:
     line1string = pair[0]
     line2string = pair[1]
-    line1 = line1string.strip('').split(',')
-    line2 = line2string.strip('').split(',')
-        
-    print(f"{line1} {line2}")    
+    line1 = GetNums(line1string) 
+    #print(f"{line1} {line2}")    
             
 #https://www.tutorialspoint.com/convert-a-string-representation-of-list-into-list-in-python
 

@@ -1,0 +1,8 @@
+E:\My Drive\Computer science\AoC2022\Day13Csharp\Day13Csharp\bin\Debug\Day13Csharp.exe.config
+E:\My Drive\Computer science\AoC2022\Day13Csharp\Day13Csharp\bin\Debug\Day13Csharp.exe
+E:\My Drive\Computer science\AoC2022\Day13Csharp\Day13Csharp\bin\Debug\Day13Csharp.pdb
+E:\My Drive\Computer science\AoC2022\Day13Csharp\Day13Csharp\obj\Debug\Day13Csharp.csproj.AssemblyReference.cache
+E:\My Drive\Computer science\AoC2022\Day13Csharp\Day13Csharp\obj\Debug\Day13Csharp.csproj.SuggestedBindingRedirects.cache
+E:\My Drive\Computer science\AoC2022\Day13Csharp\Day13Csharp\obj\Debug\Day13Csharp.csproj.CoreCompileInputs.cache
+E:\My Drive\Computer science\AoC2022\Day13Csharp\Day13Csharp\obj\Debug\Day13Csharp.exe
+E:\My Drive\Computer science\AoC2022\Day13Csharp\Day13Csharp\obj\Debug\Day13Csharp.pdb

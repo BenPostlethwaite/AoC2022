@@ -24,15 +24,12 @@ namespace Day13Csharp
         static void Main(string[] args)
         {
             List<string[]> data = GetData("test.txt");
-            //foreach (string[] pair in data)
-            //{
-                //string line1 = pair[0];
-                //string line2 = pair[1];
-            foreach (string arg in args)
+            foreach (string[] pair in data)
             {
-                Console.WriteLine(arg);
+                string line1String = pair[0];
+                string line2String = pair[1];
+
+
             }
-            //}
         }
-    }
 }

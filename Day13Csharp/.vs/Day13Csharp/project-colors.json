@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bed137bd-fed2-4e70-8941-973bde343b2c": {
+      "ProjectGuid": "bed137bd-fed2-4e70-8941-973bde343b2c",
+      "DisplayName": "Day13Csharp",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

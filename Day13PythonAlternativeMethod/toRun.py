@@ -35,44 +35,37 @@ def TestRightOrder(line1, line2):
         return (False)
     else:
         return None
-lines = []
-lines.append([1,1,3,1,1])
-lines.append([1,1,5,1,1])
-lines.append()
-lines.append([[1],[2,3,4]])
-lines.append([[1],4])
-lines.append()
-lines.append([9])
-lines.append([[8,7,6]])
-lines.append()
-lines.append([[4,4],4,4])
-lines.append([[4,4],4,4,4])
-lines.append()
-lines.append([7,7,7,7])
-lines.append([7,7,7])
-lines.append()
-lines.append([])
-lines.append([3])
-lines.append()
-lines.append([[[]]])
-lines.append([[]])
-lines.append()
-lines.append([1,[2,[3,[4,[5,6,7]]]],8,9])
-correctLine = []
-lines.append("[[2]]")
-lines.append("[[6]]]")
+def main():
+    lines = []
+    lines.append([1,1,3,1,1])
+    lines.append([1,1,5,1,1])
+    lines.append([[1],[2,3,4]])
+    lines.append([[1],4])
+    lines.append([9])
+    lines.append([[8,7,6]])
+    lines.append([[4,4],4,4])
+    lines.append([[4,4],4,4,4])
+    lines.append([7,7,7,7])
+    lines.append([7,7,7])
+    lines.append([])
+    lines.append([3])
+    lines.append([[[]]])
+    lines.append([[]])
+    lines.append([1,[2,[3,[4,[5,6,7]]]],8,9])
+    lines.append([1,[2,[3,[4,[5,6,0]]]],8,9])
+    lines.append([[2]])
+    lines.append([[6]])
 
-for bubblePass in range(len(lines)-1):
-    for i in range(len(lines)-bubblePass-1):
-        if (TestRightOrder(lines[i], lines[i+1]) == False):
-            lines[i], lines[i+1] = lines[i+1], lines[i]
+    for bubblePass in range(len(lines)-1):
+        for i in range(len(lines)-bubblePass-1):
+            if (TestRightOrder(lines[i], lines[i+1]) == False):
+                lines[i], lines[i+1] = lines[i+1], lines[i]
 
-key = 1
-for i in range(len(lines)):
-    if str(lines[i]).strip('[').strip(']') == "2" or str(lines[i]).strip('[').strip(']') == "6":
-        key *= (i+1)
+    key = 1
+    for i in range(len(lines)):
+        if str(lines[i]).strip('[').strip(']') == "2" or str(lines[i]).strip('[').strip(']') == "6":
+            key *= (i+1)
 
-    #print(lines[i])
-    
-print(key)
-input()
+        #print(lines[i])
+        
+    return(key)

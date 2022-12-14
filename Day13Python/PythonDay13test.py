@@ -4,10 +4,9 @@ def GetData(fileName):
     with open(fileName, "r") as file:
         for line in file:
             lines.append(line)
-    for i in range(0,len(lines)-1,3):
-
-        pair = [lines[i].replace("\n", ""),lines[i+1].replace("\n","")]
-        data.append(pair)
+    for i in range(len(lines)):
+        if lines[i] != "\n":            
+            data.append(lines[i].replace("\n", ""))
     return (data)
 
 def GetNums(line):
@@ -61,24 +60,62 @@ def GetNums(line):
     return(data)
 
 def TestRightOrder(line1, line2):
-    for i in range(len(line1)):
-        if line1[i] < line2[i]:
+    if type(line1) == int:
+        line1 = [line1]
+    elif type(line2) == int:
+        line2 = [line2]
+
+    smallestLine = min(len(line1),len(line2))
+    for i in range(smallestLine):
+
+        if type(line1[i]) == int and type(line2[i]) != int:
+            line1[i] = [line1[i]]
+            outcome = TestRightOrder(line1[i], line2[i])
+            if outcome != None:
+                return (outcome)
+
+        elif type(line1[i]) != int and type(line2[i]) == int:
+            line2[i] == [line2[i]]
+            outcome = TestRightOrder(line1[i], line2[i])
+            if outcome != None:
+                return (outcome)
+
+        elif type(line1[i]) != int and type(line2[i]) != int:
+            outcome = TestRightOrder(line1[i], line2[i])
+            if outcome != None:
+                return (outcome)
+        
+        elif line1[i] < line2[i]:
             return (True)
         elif line1[i] > line2[i]:
             return (False)
+
+    if smallestLine == len(line1) and len(line1) != len(line2):
+        return (True)
+    elif smallestLine == len(line2) and len(line1) != len(line2):
+        return (False)
+    else:
+        return None
+
     
-data = GetData("test.txt")
-for pair in data:
-    line1string = pair[0][1:-1]
-    line2string = pair[1][1:-1]
-    line1 = GetNums(line1string)
-    line2 = GetNums(line2string)
-    print(line1)
-    print(line2)
-    print(TestRightOrder(line1, line2))
-    print("")
+data = GetData("data.txt")
+
+correctLine = []
+lines = [[[2]], [[6]]]
+for i in range(len(data)):
+    lines.append(GetNums(data[i][1:-1]))
+
+for bubblePass in range(len(lines)-1):
+    for i in range(len(lines)-bubblePass-1):
+        if (TestRightOrder(lines[i], lines[i+1]) == False):
+            lines[i], lines[i+1] = lines[i+1], lines[i]
+
+key = 1
+for i in range(len(lines)):
+    if str(lines[i]).strip('[').strip(']') == "2" or str(lines[i]).strip('[').strip(']') == "6":
+        key *= (i+1)
+
+    #print(lines[i])
     
-
-
-
+print(key)
 input()

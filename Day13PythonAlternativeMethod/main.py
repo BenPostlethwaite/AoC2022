@@ -1,15 +1,7 @@
-linesWithSpaces = []
-lines = []
-data = []
-with open("test.txt", "r") as file:
-    for line in file:            
-        linesWithSpaces.append(line)
-for i in range(0,len(linesWithSpaces)-1,2):
-    lines.append(linesWithSpaces[i])
-    lines.append(linesWithSpaces[i+1])
-
-with open("toRun.py", "a") as file:
-    file.write("""def TestRightOrder(line1, line2):
+import os
+import toRun
+import time
+testRightOrderCode = """def TestRightOrder(line1, line2):
     if type(line1) == int:
         line1 = [line1]
     elif type(line2) == int:
@@ -45,32 +37,50 @@ with open("toRun.py", "a") as file:
     elif smallestLine == len(line2) and len(line1) != len(line2):
         return (False)
     else:
-        return None""")
+        return None
+"""
 
-    file.write("\n")
-    file.write("lines = []")
-    file.write("\n")
+bubbleSortCode = """    lines.append([[2]])
+    lines.append([[6]])
+
+    for bubblePass in range(len(lines)-1):
+        for i in range(len(lines)-bubblePass-1):
+            if (TestRightOrder(lines[i], lines[i+1]) == False):
+                lines[i], lines[i+1] = lines[i+1], lines[i]
+
+    key = 1
     for i in range(len(lines)):
-        stringArray = lines[i].replace('\n', '')
-        line = (f"lines.append({stringArray})")
-        file.write(line)
-        file.write("\n")
+        if str(lines[i]).strip('[').strip(']') == "2" or str(lines[i]).strip('[').strip(']') == "6":
+            key *= (i+1)
 
-    file.write("""correctLine = []
-lines.append("[[2]]")
-lines.append("[[6]]]")
+        #print(lines[i])
+        
+    return(key)"""
 
-for bubblePass in range(len(lines)-1):
-    for i in range(len(lines)-bubblePass-1):
-        if (TestRightOrder(lines[i], lines[i+1]) == False):
-            lines[i], lines[i+1] = lines[i+1], lines[i]
+linesWithSpaces = []
+lines = []
+data = []
+with open("data.txt", "r") as file:
+    for line in file:            
+        linesWithSpaces.append(line)
 
-key = 1
-for i in range(len(lines)):
-    if str(lines[i]).strip('[').strip(']') == "2" or str(lines[i]).strip('[').strip(']') == "6":
-        key *= (i+1)
+if os.path.exists("toRun.py"):
+    os.remove("toRun.py")
 
-    #print(lines[i])
+with open("toRun.py", "a") as file:
+    file.write(testRightOrderCode)
+    file.write("def main():\n")
+    file.write("    lines = []\n")
+
+    for i in range(0,len(linesWithSpaces)-1,3):
+        toWrite = linesWithSpaces[i].replace('\n', '')
+        file.write(f"    lines.append({toWrite})\n")
+
+        toWrite = linesWithSpaces[i+1].replace('\n', '')
+        file.write(f"    lines.append({toWrite})\n")
+
+    file.write(bubbleSortCode)
     
-print(key)
-input()""")
+#toRun doesn't save properly before running (not sure why), so the code may need to by run twice when switching between input files.
+print(toRun.main())
+input()

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n64PSJsdAYj/dnMFHtJ1XNPKgzKyqsU+VNjrQsEC05rkhigCrtt5kpkTeTtB2EYeOYfVZEyixO9G3Xw+cIVT/A==",
+  "dgSpecHash": "chYETFE0LxRa3At3RttYIgmLZC6OgJ0beeNO6AfdN8JwdlC09mTXrBRmIw8T6Kob49ZxpiUunQbZEZCFNlIIcA==",
   "success": true,
-  "projectFilePath": "/workspaces/AoC2022/Day15Csharp/Day15Csharp.csproj",
+  "projectFilePath": "/Users/Ben/Desktop/AoC2022/Day15Csharp/Day15Csharp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

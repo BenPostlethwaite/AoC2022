@@ -26,82 +26,25 @@ static List<List<int[]>> GetCoords(string fileName)
     }
     return allCoords;
 }
-static List<List<char>> GetGrid(List<List<int[]>> allCoords)
-{
-    List<List<char>> grid = new List<List<char>>();
-    int? minX = null;
-    int? maxX = null;
-    int? minY = null;
-    int? maxY = null;
 
-    foreach (List<int[]> coords in allCoords)
-    {
-        foreach (int[] coord in coords)
-        {
-            if ((coord[0] < minX) || minX == null)
-            {
-                minX = coord[0];
-            }
-            if ((coord[0] > maxX) || maxX == null)
-            {
-                maxX = coord[0];
-            }
-            if ((coord[1] < minY) || minY == null)
-            {
-                minY = coord[1];
-            }
-            if ((coord[1] > maxY) || maxY == null)
-            {
-                maxY = coord[1];
-            }
-        }
-    }
 
-    
-    for (int yRow = (int)minY; yRow <= (int)maxY; yRow++)
+    static void Main(string[] args)
     {
-        grid.Add(new List<char>());
-        for (int xRow = (int)minX; xRow <= (int)maxX; xRow++)
+        List<List<int[]>> allCoords = GetCoords("test.txt");
+        int yToTest = 10;
+        List<int> noBeaconHere = new List<int>();
+        foreach (List<int[]> coords in allCoords)
         {
-            grid[yRow].Add('.');
-        }
-    }
-
-    foreach (List<int[]> coords in allCoords)
-    {
-        grid[coords[0][1]][coords[0][0]] = 'S';
-        int disToBeacon = Math.Abs(coords[1][0]-coords[0][0])+Math.Abs(coords[1][1]-coords[0][1]);
-        for (int y = coords[0][1]-disToBeacon-(int)minY; y <= coords[0][1]+disToBeacon-(int)minY; y++)
-        {
-            if (y >= 0)
+            int disToBeacon = Math.Abs(coords[1][0]-coords[0][0])+Math.Abs(coords[1][1]-coords[0][1]);
+            int maxWidth = 2*disToBeacon+1;
+            int widthAtToTest = disToBeacon - Math.Abs(2*(yToTest-coords[0][0]));
+            if (Math.Abs(yToTest - coords[0][0]) <= disToBeacon)
             {
-                for (int x = coords[0][0]-disToBeacon-(int)minX; x <= coords[0][0]+disToBeacon-(int)minX; x++)
+                for (int i = coords[0][1]-(widthAtToTest/2); i <= widthAtToTest; i++)
                 {
-                    if (x >= 0)
-                    {
-                        grid[y][x] = '#';
-                    }
+                    noBeaconHere.Add(i);
                 }
             }
         }
-        grid[(coords[1][1])-(((int)minY))][(coords[1][0])-((int)minX)] = 'B';
-        PrintGrid(grid);
-
-    }
-    return grid;
-}
-static void PrintGrid(List<List<char>> grid)
-{
-    Console.Write("\n");
-    foreach (List<char> line in grid)
-    {
-        Console.WriteLine(string.Join(" ", line));
-    }
-}
-    static void Main(string[] args)
-    {
-        List<List<int[]>> coords = GetCoords("test.txt");
-        List<List<char>> grid = GetGrid(coords);
-        PrintGrid(grid);
     }
 }

@@ -61,6 +61,7 @@ class Program
                     }
                 }
                 */
+                
             }
         }
         foreach (List<int[]> coords in allCoords)

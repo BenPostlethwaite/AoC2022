@@ -29,9 +29,10 @@ class Program
     static void Main(string[] args)
     {
         List<List<int[]>> allCoords = GetCoords("data.txt");
-        int yToTest = 2000000;
+        int yToTest = 10;
         List<int> noBeaconHere = new List<int>();
         int numBeaconsInRowToTest = 0;
+        /*
         foreach (List<int[]> coords in allCoords)
         {                
             //Console.WriteLine($"({coords[0][0]},{coords[0][1]}) to ({coords[1][0]},{coords[1][1]})");
@@ -51,27 +52,41 @@ class Program
                     noBeaconHere.RemoveRange(minIndex, maxIndex-minIndex+1);
                 }
                 noBeaconHere.InsertRange(minIndex, Enumerable.Range(minRange, toMeasureWidth));
-                /*
-                for (int i = coords[0][0] - (toMeasureWidth-1)/2; i <= coords[0][0] + (toMeasureWidth - 1)/2; i++)
-                {
-                    int index = noBeaconHere.BinarySearch(i);
-                    if (index < 0)
-                    {
-                        noBeaconHere.Insert(~index, i);
-                    }
-                }
-                */
+                
+
+                
+                // for (int i = coords[0][0] - (toMeasureWidth-1)/2; i <= coords[0][0] + (toMeasureWidth - 1)/2; i++)
+                // {
+                //     int index = noBeaconHere.BinarySearch(i);
+                //     if (index < 0)
+                //     {
+                //         noBeaconHere.Insert(~index, i);
+                //     }
+                // }
+                
                 
             }
         }
+        */
+        int count = 0;
+        string bigEqualtion = "x>0{y>0}{x<4000000}{y<4000000}";
         foreach (List<int[]> coords in allCoords)
         {
-            int index = noBeaconHere.BinarySearch(coords[1][0]);
-            if (coords[1][1] == yToTest && index >= 0)
-            {
-                noBeaconHere.RemoveAt(index);
-            }
+            string equation = $"abs(y-{coords[0][1]})+abs(x-{coords[0][0]}) < {Math.Abs(coords[1][0] - coords[0][0]) + Math.Abs(coords[1][1] - coords[0][1])}";
+            //Console.WriteLine(equation);
+            bigEqualtion += "{"+equation+"}";
+            // int index = noBeaconHere.BinarySearch(coords[1][0]);
+            // if (coords[1][1] == yToTest && index >= 0)
+            // {
+            //     noBeaconHere.RemoveAt(index);
+            // }
+            Console.WriteLine("Calc.setExpression({latex: '"+equation+"'})");
+            count ++;
         }
-    }
+        //Console.WriteLine("Calc.setExpression({latex: '"+bigEqualtion+"'})");
+        //paste command from console into desmos
+        Console.WriteLine(count);
+    }       
+
 }
 

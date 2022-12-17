@@ -25,6 +25,7 @@ class Program
     static Dictionary<string, Node> nodes = new Dictionary<string, Node>();
     static KeyValuePair<List<string>, int> maxFlow = new KeyValuePair<List<string>, int>(new List<string>(), 0);
     static DirectedGraph<string> graph = new DirectedGraph<string>();
+    static Dictionary<string, int> distances = new Dictionary<string, int>();
     static void MakeNodes(string fileName)
     {
         string[] data = File.ReadAllLines(fileName);
@@ -54,21 +55,23 @@ class Program
         foreach (string vertex in nodes.Keys)
         {
             int localMinsLeft = minsLeft;
-            if (vertex != currentNodeName && nodes[vertex].flowRate!= 0 && ((localMinsLeft > 0) && previousOpenNodes.Contains(vertex) == false))
+            if (vertex != currentNodeName && nodes[vertex].flowRate!= 0)
             {
                 Node currentNode  = nodes[vertex];
-                var route = graph.Traverse(Graphalo.Traversal.TraversalKind.Dijkstra, currentNodeName, vertex);
-                localMinsLeft -= (route.Results.Count()-1);
+                int distance = distances[(currentNodeName)+vertex];
+                localMinsLeft -= (distance); //traverse to node
 
-                localMinsLeft--;
-                List<string> openNodes = new List<string>();
-                foreach (string item in previousOpenNodes)
+                if ((localMinsLeft > 0) && previousOpenNodes.Contains(vertex) == false)
                 {
-                    openNodes.Add(item);
+                    localMinsLeft--; //open tap
+                    List<string> openNodes = new List<string>();
+                    foreach (string item in previousOpenNodes)
+                    {
+                        openNodes.Add(item);
+                    }
+                    openNodes.Add(vertex);
+                    MakeConnection(vertex, (localMinsLeft), (totalFlow + localMinsLeft*currentNode.flowRate), openNodes);                                   
                 }
-                openNodes.Add(vertex);
-                MakeConnection(vertex, (localMinsLeft), (totalFlow + localMinsLeft*currentNode.flowRate), openNodes);                                   
-                
             }
         }
         if (totalFlow > maxFlow.Value)
@@ -88,6 +91,17 @@ class Program
                 graph.AddEdge(new Edge<string>(nodeDict.Key, connection, 1));
             }
         }
+
+        foreach (string node1 in nodes.Keys)
+        {
+            foreach (string node2 in nodes.Keys)
+            {
+                var route = graph.Traverse(Graphalo.Traversal.TraversalKind.Dijkstra, node1, node2);
+                int distance = route.Results.Count()-1;
+                distances.Add(node1+node2, distance);
+            }
+        }
+
         List<string> visitedNodes = new List<string>();
         int minsLeft = 30;
         int totalFlow = 0;
@@ -96,7 +110,7 @@ class Program
         var output = maxFlow;
         watch.Start();
         var elapsedMs = watch.ElapsedMilliseconds;
-        Console.WriteLine($"Completed in {(double)elapsedMs/1000} seconds");
+        Console.WriteLine($"Completed in {(double)elapsedMs/1000} ms");
         Console.WriteLine(output.Value);
     }
 }

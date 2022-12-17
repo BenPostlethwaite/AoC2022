@@ -13,3 +13,5 @@
 /Users/Ben/Desktop/AoC2022/Day16Csharp/obj/Debug/net6.0/Day16Csharp.pdb
 /Users/Ben/Desktop/AoC2022/Day16Csharp/obj/Debug/net6.0/Day16Csharp.genruntimeconfig.cache
 /Users/Ben/Desktop/AoC2022/Day16Csharp/obj/Debug/net6.0/ref/Day16Csharp.dll
+/Users/Ben/Desktop/AoC2022/Day16Csharp/bin/Debug/net6.0/Graphalo.dll
+/Users/Ben/Desktop/AoC2022/Day16Csharp/obj/Debug/net6.0/Day16Csharp.csproj.CopyComplete

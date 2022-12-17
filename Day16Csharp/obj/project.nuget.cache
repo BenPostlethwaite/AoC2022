@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wOFScdXumSUSfwWUSinwPJsgj6XxG9EVFBGX20vtMeZxyGvG+HZEP/8EJMdcWeARhJoxWj64TGsMjGj9PcBK2w==",
+  "dgSpecHash": "ayyDoXids6tj3gDvAp71JChTSUto3NpSMYtCu+CiSbYt9noakvMVkejSgdvL8UZpivyruk2ReloVga8TvUJOhw==",
   "success": true,
   "projectFilePath": "/Users/Ben/Desktop/AoC2022/Day16Csharp/Day16Csharp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/Ben/.nuget/packages/graphalo/1.0.0/graphalo.1.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

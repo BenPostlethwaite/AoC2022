@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Ben/Desktop/AoC2022/Day16Csharp/Day16Csharp.csproj": {}
+    "/Users/Ben/Desktop/AoC2022/Day17Csharp/Day17Csharp.csproj": {}
   },
   "projects": {
-    "/Users/Ben/Desktop/AoC2022/Day16Csharp/Day16Csharp.csproj": {
+    "/Users/Ben/Desktop/AoC2022/Day17Csharp/Day17Csharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Ben/Desktop/AoC2022/Day16Csharp/Day16Csharp.csproj",
-        "projectName": "Day16Csharp",
-        "projectPath": "/Users/Ben/Desktop/AoC2022/Day16Csharp/Day16Csharp.csproj",
+        "projectUniqueName": "/Users/Ben/Desktop/AoC2022/Day17Csharp/Day17Csharp.csproj",
+        "projectName": "Day17Csharp",
+        "projectPath": "/Users/Ben/Desktop/AoC2022/Day17Csharp/Day17Csharp.csproj",
         "packagesPath": "/Users/Ben/.nuget/packages/",
-        "outputPath": "/Users/Ben/Desktop/AoC2022/Day16Csharp/obj/",
+        "outputPath": "/Users/Ben/Desktop/AoC2022/Day17Csharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Ben/.nuget/NuGet/NuGet.Config"
@@ -37,12 +37,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Graphalo": {
-              "target": "Package",
-              "version": "[1.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

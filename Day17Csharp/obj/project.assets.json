@@ -1,37 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
-      "Graphalo/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.1/Graphalo.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/Graphalo.dll": {}
-        }
-      }
-    }
+    "net6.0": {}
   },
-  "libraries": {
-    "Graphalo/1.0.0": {
-      "sha512": "SVJl0qmxExjaeO2TuFwnEwLtu1c5u4peNX1enpIdGHScN/um+c1PlD8YsS27q6AoGqANpF8Tk5sPTN21ZgsRKg==",
-      "type": "package",
-      "path": "graphalo/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "graphalo.1.0.0.nupkg.sha512",
-        "graphalo.nuspec",
-        "lib/netstandard2.1/Graphalo.dll"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "Graphalo >= 1.0.0"
-    ]
+    "net6.0": []
   },
   "packageFolders": {
     "/Users/Ben/.nuget/packages/": {}
@@ -39,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Ben/Desktop/AoC2022/Day16Csharp/Day16Csharp.csproj",
-      "projectName": "Day16Csharp",
-      "projectPath": "/Users/Ben/Desktop/AoC2022/Day16Csharp/Day16Csharp.csproj",
+      "projectUniqueName": "/Users/Ben/Desktop/AoC2022/Day17Csharp/Day17Csharp.csproj",
+      "projectName": "Day17Csharp",
+      "projectPath": "/Users/Ben/Desktop/AoC2022/Day17Csharp/Day17Csharp.csproj",
       "packagesPath": "/Users/Ben/.nuget/packages/",
-      "outputPath": "/Users/Ben/Desktop/AoC2022/Day16Csharp/obj/",
+      "outputPath": "/Users/Ben/Desktop/AoC2022/Day17Csharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/Ben/.nuget/NuGet/NuGet.Config"
@@ -69,12 +43,6 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
-        "dependencies": {
-          "Graphalo": {
-            "target": "Package",
-            "version": "[1.0.0, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",

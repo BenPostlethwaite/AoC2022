@@ -52,16 +52,16 @@ class Program
     static void MakeConnection(string currentNodeName, int minsLeft, int totalFlow, List<string> previousOpenNodes)
     {
   
-        foreach (string vertex in nodes.Keys)
+        foreach (string humanMove in nodes.Keys)
         {
             int localMinsLeft = minsLeft;
-            if (vertex != currentNodeName && nodes[vertex].flowRate!= 0)
+            if (humanMove != currentNodeName && nodes[humanMove].flowRate!= 0)
             {
-                Node currentNode  = nodes[vertex];
-                int distance = distances[(currentNodeName)+vertex];
+                Node currentNode  = nodes[humanMove];
+                int distance = distances[(currentNodeName)+humanMove];
                 localMinsLeft -= (distance); //traverse to node
 
-                if ((localMinsLeft > 0) && previousOpenNodes.Contains(vertex) == false)
+                if ((localMinsLeft > 0) && previousOpenNodes.Contains(humanMove) == false)
                 {
                     localMinsLeft--; //open tap
                     List<string> openNodes = new List<string>();
@@ -69,8 +69,8 @@ class Program
                     {
                         openNodes.Add(item);
                     }
-                    openNodes.Add(vertex);
-                    MakeConnection(vertex, (localMinsLeft), (totalFlow + localMinsLeft*currentNode.flowRate), openNodes);                                   
+                    openNodes.Add(humanMove);
+                    MakeConnection(humanMove, (localMinsLeft), (totalFlow + localMinsLeft*currentNode.flowRate), openNodes);                                   
                 }
             }
         }
@@ -83,7 +83,7 @@ class Program
     {
         var watch = System.Diagnostics.Stopwatch.StartNew();
 
-        MakeNodes("data.txt");
+        MakeNodes("test.txt");
         foreach (var nodeDict in nodes)
         {
             foreach (string connection in nodeDict.Value.connections)
@@ -103,7 +103,7 @@ class Program
         }
 
         List<string> visitedNodes = new List<string>();
-        int minsLeft = 30;
+        int minsLeft = 26;
         int totalFlow = 0;
 
         MakeConnection("AA", minsLeft, totalFlow, visitedNodes);

@@ -73,7 +73,7 @@ class Program
         foreach (int[] coord in rock.positions)
         {
             int[] coordCopy = new int[]{coord[0]+toAdd,coord[1]};            
-            if (0 > coordCopy[0] || coordCopy[0]>6)
+            if (0 > coordCopy[0] || coordCopy[0]>6 || (coordCopy[1] < fallenRockGraph.Count && fallenRockGraph[coordCopy[1]][coordCopy[0]] != '.'))
             {
                 hitWall = true;
                 break;
@@ -149,7 +149,7 @@ static bool MoveDown(Rock rock, List<string> fallenRockGraph)
 
         int counter = 0;
         int rockIndex = 0;
-        while (rockIndex <= 2022)
+        while (rockIndex < 2022)
         {
             List<int[]> rockType = rockStartPositions[rockIndex%5];
             Rock rock = new Rock(rockType, fallenRocksGraph.Count-1);
@@ -158,7 +158,7 @@ static bool MoveDown(Rock rock, List<string> fallenRockGraph)
             {
                 //problem with L shape overwriteing
                 landed = MoveDown(rock, fallenRocksGraph);
-                PrintRocks(fallenRocksGraph);
+                //PrintRocks(fallenRocksGraph);
                 if (landed)
                 {
                     break;
@@ -170,6 +170,7 @@ static bool MoveDown(Rock rock, List<string> fallenRockGraph)
             }
             rockIndex++;
         }
+        Console.WriteLine(fallenRocksGraph.Count-1);
     }
 }
 

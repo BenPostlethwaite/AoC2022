@@ -1,0 +1,15 @@
+/workspaces/AoC2022/Day17Part2/bin/Debug/net7.0/Day17Part2
+/workspaces/AoC2022/Day17Part2/bin/Debug/net7.0/Day17Part2.deps.json
+/workspaces/AoC2022/Day17Part2/bin/Debug/net7.0/Day17Part2.runtimeconfig.json
+/workspaces/AoC2022/Day17Part2/bin/Debug/net7.0/Day17Part2.dll
+/workspaces/AoC2022/Day17Part2/bin/Debug/net7.0/Day17Part2.pdb
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/Day17Part2.csproj.AssemblyReference.cache
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/Day17Part2.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/Day17Part2.AssemblyInfoInputs.cache
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/Day17Part2.AssemblyInfo.cs
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/Day17Part2.csproj.CoreCompileInputs.cache
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/Day17Part2.dll
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/refint/Day17Part2.dll
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/Day17Part2.pdb
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/Day17Part2.genruntimeconfig.cache
+/workspaces/AoC2022/Day17Part2/obj/Debug/net7.0/ref/Day17Part2.dll

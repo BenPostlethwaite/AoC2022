@@ -1,4 +1,6 @@
-﻿using System.Net.WebSockets;
+﻿using System.Runtime.CompilerServices;
+using System.Data;
+using System.Net.WebSockets;
 using System;
 using System.Reflection;
 namespace Day17Csharp;
@@ -131,10 +133,12 @@ static bool MoveDown(Rock rock, List<string> fallenRockGraph)
     }
     static void Main(string[] args)
     {
-        string jetStream = File.ReadAllText("test.txt");
+        List<State> states = new List<State>();
+        states.Add(new State(0,0, 1));
+        string jetStream = File.ReadAllText("data.txt");
         List<List<int[]>> rockStartPositions = new List<List<int[]>>();
         List<int[]> fallenRocks = new List<int[]>();
-
+        ulong rocksToFall = 1000000000000;
 
         rockStartPositions.Add(new List<int[]>(){new int[]{2,5},new int[]{3,5},new int[]{4,5},new int[]{5,5}});
         rockStartPositions.Add(new List<int[]>(){new int[]{2,6},new int[]{3,6},new int[]{4,6},new int[]{3,5}, new int[]{3,7}});
@@ -146,17 +150,21 @@ static bool MoveDown(Rock rock, List<string> fallenRockGraph)
         
         //List<List<string>> rockStartPositonsGraph = new List<List<string>>();
         //PopulateRocks(rockStartPositonsGraph);
+        List<string> repeatingSection = new List<string>();
+        ulong counter = 0;
+        ulong rockIndex = 0;
+        bool cycleFound = false;
+        ulong hiddenRocks = 0;
+        ulong hiddenLength = 0;
+        ulong hiddenCycles = 0;
 
-        int counter = 0;
-        int rockIndex = 0;
-        while (rockIndex < 2022)
+        while (rockIndex + hiddenRocks < rocksToFall)
         {
-            List<int[]> rockType = rockStartPositions[rockIndex%5];
+            List<int[]> rockType = rockStartPositions[(Int32)rockIndex%5];
             Rock rock = new Rock(rockType, fallenRocksGraph.Count-1);
             bool landed = false;
             while (landed == false)
             {
-                //problem with L shape overwriteing
                 landed = MoveDown(rock, fallenRocksGraph);
                 //PrintRocks(fallenRocksGraph);
                 if (landed)
@@ -164,13 +172,42 @@ static bool MoveDown(Rock rock, List<string> fallenRockGraph)
                     break;
                 }
                 //PrintRocks(fallenRocksGraph);
-                MoveLateral(jetStream[counter], rock, fallenRocksGraph);
+                MoveLateral(jetStream[(Int32)counter], rock, fallenRocksGraph);
                 counter++;
-                counter = counter%jetStream.Count();
+                counter = (ulong)((Int32)counter%jetStream.Count());
             }
             rockIndex++;
+            // if (fallenRocksGraph.Count % 2 == 1 && fallenRocksGraph.GetRange(1,(fallenRocksGraph.Count-1)/2)
+            // .SequenceEqual(fallenRocksGraph.GetRange((fallenRocksGraph.Count-1)/2+1,(fallenRocksGraph.Count-1)/2)))
+            // {
+            //     int repeat = rockIndex;
+            // }
+            //PrintRocks(fallenRocksGraph);
+
+            State currentState = new State(counter, rockIndex, (ulong)fallenRocksGraph.Count);
+            foreach (State state in states)
+            {
+                if (state.counter == currentState.counter && state.rockType == currentState.rockType)
+                {
+                    if (cycleFound == true)
+                    {
+                        repeatingSection = fallenRocksGraph.GetRange((Int32)state.height, (Int32)currentState.height-(Int32)state.height);
+                        
+                        hiddenCycles = (rocksToFall-rockIndex)/(currentState.rocksFallen-state.rocksFallen);
+                        hiddenLength = ((ulong)repeatingSection.Count)*hiddenCycles;
+                        hiddenRocks = hiddenCycles * (currentState.rocksFallen-state.rocksFallen);
+                    }
+                    cycleFound = true;
+                    break;
+                }
+            }
+            if (cycleFound == false)
+            {
+                states.Add(currentState);
+            }
+        
         }
-        Console.WriteLine(fallenRocksGraph.Count-1);
+        Console.WriteLine((ulong)fallenRocksGraph.Count+hiddenLength-1);
     }
 }
 
@@ -183,5 +220,20 @@ class Rock
         {
             this.positions.Add(new int[] {positions[i][0], positions[i][1]+lowestY});
         }
+    }
+}
+
+class State
+{
+    public ulong height;
+    public ulong rocksFallen;
+    public ulong counter;
+    public ulong rockType;
+    public State(ulong counter, ulong rockIndex, ulong height)
+    {
+        this.height = height;
+        this.rocksFallen = rockIndex;
+        this.counter = counter;
+        this.rockType = rockIndex % 5;
     }
 }

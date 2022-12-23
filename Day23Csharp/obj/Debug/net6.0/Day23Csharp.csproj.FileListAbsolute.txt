@@ -1,0 +1,15 @@
+/Users/Ben/Desktop/AoC2022/Day23Csharp/bin/Debug/net6.0/Day23Csharp
+/Users/Ben/Desktop/AoC2022/Day23Csharp/bin/Debug/net6.0/Day23Csharp.deps.json
+/Users/Ben/Desktop/AoC2022/Day23Csharp/bin/Debug/net6.0/Day23Csharp.runtimeconfig.json
+/Users/Ben/Desktop/AoC2022/Day23Csharp/bin/Debug/net6.0/Day23Csharp.dll
+/Users/Ben/Desktop/AoC2022/Day23Csharp/bin/Debug/net6.0/Day23Csharp.pdb
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/Day23Csharp.csproj.AssemblyReference.cache
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/Day23Csharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/Day23Csharp.AssemblyInfoInputs.cache
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/Day23Csharp.AssemblyInfo.cs
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/Day23Csharp.csproj.CoreCompileInputs.cache
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/Day23Csharp.dll
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/refint/Day23Csharp.dll
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/Day23Csharp.pdb
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/Day23Csharp.genruntimeconfig.cache
+/Users/Ben/Desktop/AoC2022/Day23Csharp/obj/Debug/net6.0/ref/Day23Csharp.dll

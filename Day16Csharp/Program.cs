@@ -27,6 +27,7 @@ class Program
     static DirectedGraph<string> graph = new DirectedGraph<string>();
     static Dictionary<string, int> distances = new Dictionary<string, int>();
     static void MakeNodes(string fileName)
+    
     {
         string[] data = File.ReadAllLines(fileName);
         foreach (string line in data)
@@ -49,19 +50,19 @@ class Program
             nodes.Add(name, node);
         }
     }
-    static void MakeConnection(string currentNodeName, int minsLeft, int totalFlow, List<string> previousOpenNodes)
+    static void MakeElephantConnections(string currentNodeName, int minsLeft, int totalFlow, List<string> previousOpenNodes)
     {
   
-        foreach (string humanMove in nodes.Keys)
+        foreach (string move in nodes.Keys)
         {
             int localMinsLeft = minsLeft;
-            if (humanMove != currentNodeName && nodes[humanMove].flowRate!= 0)
+            if (move != currentNodeName && nodes[move].flowRate!= 0)
             {
-                Node currentNode  = nodes[humanMove];
-                int distance = distances[(currentNodeName)+humanMove];
+                Node currentNode  = nodes[move];
+                int distance = distances[(currentNodeName)+move];
                 localMinsLeft -= (distance); //traverse to node
 
-                if ((localMinsLeft > 0) && previousOpenNodes.Contains(humanMove) == false)
+                if ((localMinsLeft > 0) && previousOpenNodes.Contains(move) == false)
                 {
                     localMinsLeft--; //open tap
                     List<string> openNodes = new List<string>();
@@ -69,8 +70,8 @@ class Program
                     {
                         openNodes.Add(item);
                     }
-                    openNodes.Add(humanMove);
-                    MakeConnection(humanMove, (localMinsLeft), (totalFlow + localMinsLeft*currentNode.flowRate), openNodes);                                   
+                    openNodes.Add(move);
+                    MakeElephantConnections(move, (localMinsLeft), (totalFlow + localMinsLeft*currentNode.flowRate), openNodes);                                   
                 }
             }
         }
@@ -79,11 +80,39 @@ class Program
             maxFlow = new KeyValuePair<List<string>, int>(previousOpenNodes, totalFlow);
         }
     }
+    
+    static void MakeConnection(string currentNodeName, int minsLeft, int totalFlow, List<string> previousOpenNodes)
+    {
+        foreach (string move in nodes.Keys)
+        {
+            int localMinsLeft = minsLeft;
+            if (move != currentNodeName && nodes[move].flowRate!= 0)
+            {
+                Node currentNode  = nodes[move];
+                int distance = distances[(currentNodeName)+move];
+                localMinsLeft -= (distance); //traverse to node
+
+                if ((localMinsLeft > 0) && previousOpenNodes.Contains(move) == false)
+                {
+                    localMinsLeft--; //open tap
+                    List<string> openNodes = new List<string>();
+                    foreach (string item in previousOpenNodes)
+                    {
+                        openNodes.Add(item);
+                    }
+                    openNodes.Add(move);
+                    MakeConnection(move, (localMinsLeft), (totalFlow + localMinsLeft*currentNode.flowRate), openNodes);                                   
+                }
+            }
+        }
+        MakeElephantConnections("AA", 26, totalFlow, previousOpenNodes);
+
+    }
     static void Main(string[] args)
     {
         var watch = System.Diagnostics.Stopwatch.StartNew();
 
-        MakeNodes("test.txt");
+        MakeNodes("data.txt");
         foreach (var nodeDict in nodes)
         {
             foreach (string connection in nodeDict.Value.connections)
@@ -108,7 +137,7 @@ class Program
 
         MakeConnection("AA", minsLeft, totalFlow, visitedNodes);
         var output = maxFlow;
-        watch.Start();
+        watch.Stop();
         var elapsedMs = watch.ElapsedMilliseconds;
         Console.WriteLine($"Completed in {(double)elapsedMs/1000} ms");
         Console.WriteLine(output.Value);

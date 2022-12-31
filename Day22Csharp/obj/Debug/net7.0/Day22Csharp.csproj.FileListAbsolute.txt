@@ -1,0 +1,15 @@
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\bin\Debug\net7.0\Day22Csharp.exe
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\bin\Debug\net7.0\Day22Csharp.deps.json
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\bin\Debug\net7.0\Day22Csharp.runtimeconfig.json
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\bin\Debug\net7.0\Day22Csharp.dll
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\bin\Debug\net7.0\Day22Csharp.pdb
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\Day22Csharp.csproj.AssemblyReference.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\Day22Csharp.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\Day22Csharp.AssemblyInfoInputs.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\Day22Csharp.AssemblyInfo.cs
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\Day22Csharp.csproj.CoreCompileInputs.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\Day22Csharp.dll
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\refint\Day22Csharp.dll
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\Day22Csharp.pdb
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\Day22Csharp.genruntimeconfig.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day22Csharp\obj\Debug\net7.0\ref\Day22Csharp.dll

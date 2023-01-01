@@ -1,0 +1,15 @@
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\bin\Debug\net7.0\Day19CsharpDepthFirst.exe
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\bin\Debug\net7.0\Day19CsharpDepthFirst.deps.json
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\bin\Debug\net7.0\Day19CsharpDepthFirst.runtimeconfig.json
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\bin\Debug\net7.0\Day19CsharpDepthFirst.dll
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\bin\Debug\net7.0\Day19CsharpDepthFirst.pdb
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\Day19CsharpDepthFirst.csproj.AssemblyReference.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\Day19CsharpDepthFirst.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\Day19CsharpDepthFirst.AssemblyInfoInputs.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\Day19CsharpDepthFirst.AssemblyInfo.cs
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\Day19CsharpDepthFirst.csproj.CoreCompileInputs.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\Day19CsharpDepthFirst.dll
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\refint\Day19CsharpDepthFirst.dll
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\Day19CsharpDepthFirst.pdb
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\Day19CsharpDepthFirst.genruntimeconfig.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19CsharpDepthFirst\obj\Debug\net7.0\ref\Day19CsharpDepthFirst.dll

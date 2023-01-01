@@ -1,0 +1,15 @@
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\bin\Debug\net7.0\Day19Charp.exe
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\bin\Debug\net7.0\Day19Charp.deps.json
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\bin\Debug\net7.0\Day19Charp.runtimeconfig.json
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\bin\Debug\net7.0\Day19Charp.dll
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\bin\Debug\net7.0\Day19Charp.pdb
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\Day19Charp.csproj.AssemblyReference.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\Day19Charp.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\Day19Charp.AssemblyInfoInputs.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\Day19Charp.AssemblyInfo.cs
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\Day19Charp.csproj.CoreCompileInputs.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\Day19Charp.dll
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\refint\Day19Charp.dll
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\Day19Charp.pdb
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\Day19Charp.genruntimeconfig.cache
+c:\Users\benpo\source\repos\BenPostlethwaite\AoC2022\Day19Charp\obj\Debug\net7.0\ref\Day19Charp.dll
